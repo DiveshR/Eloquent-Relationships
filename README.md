@@ -107,3 +107,24 @@ A. simple Eager Loading `with`
 ```
 
 B. Eager Loading `withCount`
+
+```
+        $countries = Country::withCount('shops')->get();
+        return view('welcome', compact('countries'));
+```
+```
+       <table border="solid 1px #ccc">
+        <tr>
+            <th>Country</th>
+            <th>No of Shops</th>
+        </tr>
+        @foreach($countries as $country)
+        <tr>
+            <td>{{ $country->name }}</td>
+            <!--<td>{{ $country->shops->count() }}</td> -->
+            <td>{{ $country->shops_count}}</td>
+        </tr>
+        @endforeach
+       </table>
+       
+```
