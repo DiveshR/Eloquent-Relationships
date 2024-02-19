@@ -11,7 +11,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     </head>
     <body class="antialiased">
-       <table>
+       <table border="solid 1px #ccc">
         <tr>
             <th>Country</th>
             <th>No of Shops</th>
@@ -19,7 +19,8 @@
         @foreach($countries as $country)
         <tr>
             <td>{{ $country->name }}</td>
-            <td>{{ $country->shops->count() }}</td>
+            <!--<td>{{ $country->shops->count() }}</td> -->
+            <td>{{ $country->shops_count}}</td>
         </tr>
         @endforeach
        </table>

@@ -36,7 +36,7 @@ App\Models\Country
 
     public function shops(): HasManyThrough
     {
-        return $this->hasManyThrough(City::class, Shop::class);
+        return $this->hasManyThrough(Shop::class, City::class);
     }
 
 ```
@@ -106,3 +106,4 @@ A. simple Eager Loading `with`
        </table>
 ```
 
+B. Eager Loading `withCount`
